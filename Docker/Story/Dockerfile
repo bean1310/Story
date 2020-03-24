@@ -1,13 +1,14 @@
-FROM php:7.3.7-fpm-buster
-
-RUN apt-get update && \
-apt-get install iproute2 nodejs npm openssh-server git zip unzip -y
+FROM php:7.4.4-fpm-alpine3.11
 
 WORKDIR /tmp
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-RUN docker-php-ext-install pdo_mysql
-RUN pecl install xdebug
+RUN apk add --no-cache autoconf build-base nodejs npm python && \
+    pecl install xdebug && \
+    docker-php-ext-enable xdebug && \
+    docker-php-ext-install pdo_mysql
+
+WORKDIR /var/www/Story
 
 COPY ./Docker/Story/xdebug.ini /usr/local/etc/php/conf.d/
