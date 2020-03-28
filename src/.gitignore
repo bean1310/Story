@@ -11,3 +11,6 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /public/fonts/vendor
+/public/js/*
+/public/css/*
+/public/min-manifest.json
