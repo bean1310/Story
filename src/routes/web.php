@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/detail', 'DetailController@index')->name('detail');
+// Route::get('/detail', 'DetailController@index')->name('detail');
 
-Route::get('/regist', 'RegistController@index')->name('regist');
+Route::get('/registerStory', 'RegisterStoryController@index')->name('registerStory');
+Route::post('/registerStory', 'RegisterStoryController@register');
