@@ -1,0 +1,30 @@
+// Variables
+@import 'variables';
+
+// Local bariables
+$media-form-add-and-del-button-size: 30px;
+$media-form-add-button-color: $blue;
+$media-form-del-button-color: $red;
+
+.register-form-for-comic, .register-form-for-anime, .register-form-for-drama {
+    display: none;
+}
+
+.register-form-for-novel {
+    display: block;
+}
+
+.media-form-add-and-del-button {
+    text-align: center;
+}
+
+.media-form-add-button {
+    font-size: $media-form-add-and-del-button-size;
+    color: $media-form-add-button-color;
+}
+
+.media-form-del-button {
+    font-size: $media-form-add-and-del-button-size;
+    color: $media-form-del-button-color;
+    display: none;
+}
